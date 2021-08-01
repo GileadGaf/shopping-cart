@@ -1,0 +1,28 @@
+.cart {
+    .title {
+        text-align: center;
+        margin-bottom: 10px;
+        text-decoration: underline;
+    }
+    .cart-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 10px;
+        .cart-preview {
+            display: flex;
+            gap: 20px;
+            padding: 10px;
+            justify-content: center;
+            align-items: center;
+            background-color: #292929;
+            .btn-remove {
+                cursor: pointer;
+                border-radius: 50%;
+                background-color: $clr1;
+                color: $clr2;
+            }
+        }
+    }
+    .total-price {}
+}

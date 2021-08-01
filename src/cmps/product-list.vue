@@ -8,14 +8,21 @@
 </template>
 
 <script>
+import productPreview from '@/cmps/product-preview';
 export default {
+  props: {
+    products: {
+      type: Array,
+    },
+  },
   created () {
-    this.products = this.$store.getters.products
   },
   data() {
     return {
-      products: null
     }
   },
+  components:{
+    productPreview
+  }
 }
 </script>
