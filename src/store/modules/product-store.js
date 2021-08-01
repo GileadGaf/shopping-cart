@@ -1,6 +1,8 @@
 import { productService } from '../../services/product-service';
+import { cartService } from '../../services/cart-service';
 
 export default {
+    strict: true,
     state: {
         products: [],
         cartProducts: []
@@ -14,7 +16,7 @@ export default {
         },
         cartTotal({ cartProducts }) {
             return cartProducts.reduce((acc, product) => {
-                return acc + product.price;
+                return acc + +product.price;
             }, 0)
         },
         getProducts(state) {
@@ -24,11 +26,14 @@ export default {
         }
     },
     mutations: {
+        setCart(state, { cartProducts }) {
+            state.cartProducts = cartProducts;
+        },
         addToCart({ cartProducts }, { product }) {
             cartProducts.push(product);
         },
         removeFromCart({ cartProducts }, { productId }) {
-            const idx = state.cartProducts.findIndex(product => cproduct_id === productId)
+            const idx = cartProducts.findIndex(product => product._id === productId)
             cartProducts.splice(idx, 1)
         },
         clearCart({ cartProducts }) {
@@ -41,6 +46,18 @@ export default {
 
     },
     actions: {
+        async loadCart({ commit }) {
+            const cartProducts = await cartService.getCartProducts();
+            commit({ type: 'setCart', cartProducts });
+
+        },
+        async removeFromCart({ commit }, { productId }) {
+            await cartService.removeFromCart(productId);
+            commit({ type: 'removeFromCart', productId })
+        },
+
+
+
         async loadProducts({ commit }) {
             const products = await productService.getProducts()
             commit({ type: 'setProducts', products })

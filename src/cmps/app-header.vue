@@ -8,7 +8,7 @@
     <template class="right-header">
       <router-link to="/Cart">
       My cart
-      (<span class="num-of-items"></span>)
+      (<span class="num-of-items">{{cartSize}}</span>)
       </router-link
       >
       </template>
@@ -17,7 +17,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+computed:{
+  cartSize(){
+    return this.$store.getters.cartSize;
+  }
+}
+}
 </script>
 
 <style>
