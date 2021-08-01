@@ -3,11 +3,18 @@ import { storageService } from './async-storage-service.js';
 export const productService = {
     getProducts
 }
+const gProducts = require('../assets/product.json')
+const KEY = "productsDB";
 
-const kEY = "productsDb";
 
-function getProducts() {
-    return storageService.query(KEY);
+async function getProducts() {
+    const products = await storageService.query(KEY);
+    console.log(products);
+    if (!products.length) {
+        storageService.postMany(KEY, gProducts);
+        return gProducts;
+    }
+    return products;
 }
 
 function addProduct() {

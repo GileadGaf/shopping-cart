@@ -2,6 +2,7 @@ import { productService } from '../../services/product-service';
 
 export default {
     state: {
+        products: [],
         cartProducts: []
     },
     getters: {
@@ -15,6 +16,11 @@ export default {
             return cartProducts.reduce((acc, product) => {
                 return acc + product.price;
             }, 0)
+        },
+        getProducts(state) {
+            console.log('from store', state.products);
+            console.log('state', state);
+            return state.products
         }
     },
     mutations: {
@@ -27,9 +33,17 @@ export default {
         },
         clearCart({ cartProducts }) {
             cartProducts = [];
+        },
+        setProducts(state, { products }) {
+            console.log('mutations', products);
+            state.products = products
         }
 
     },
-    actions: {},
-    modules: {}
+    actions: {
+        async loadProducts({ commit }) {
+            const products = await productService.getProducts()
+            commit({ type: 'setProducts', products })
+        }
+    },
 }

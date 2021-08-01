@@ -1,21 +1,26 @@
 <template>
-  <section class="product-list">
-    <div class="product-list-container" v-for="product in products" :key="product._id">
-      <product-preview :product="product"/>
+  <section v-if="products.length" class="product-list">
+    <div
+      class="product-list-container"
+      v-for="product in products"
+      :key="product._id"
+    >
+      <product-preview :product="product" />
     </div>
   </section>
-  
 </template>
 
 <script>
+import productPreview from '@/cmps/product-preview'
 export default {
-  created () {
-    this.products = this.$store.getters.products
+  components: {
+    productPreview,
   },
-  data() {
-    return {
-      products: null
-    }
-  },
-}
+ computed: {
+   products() {
+     console.log(this.$store.state.productStore.products );
+     return this.$store.state.productStore.products 
+   }
+ }
+};
 </script>
