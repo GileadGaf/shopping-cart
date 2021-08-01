@@ -1,0 +1,97 @@
+[{
+        "_id": "61067bc3dc3665f674dcc5a6",
+        "title": "T-shirt",
+        "price": "12",
+        "img": "https://picsum.photos/200"
+    },
+    {
+        "_id": "61067bc3708aaa831cbbb5df",
+        "title": "Jeans",
+        "price": "44",
+        "img": "https://picsum.photos/200"
+    },
+    {
+        "_id": "61067bc376c75e7b1d8bb731",
+        "title": "Coat",
+        "price": "33",
+        "img": "https://picsum.photos/200"
+    },
+    {
+        "_id": "61067bc3a17487ef62237b7b",
+        "title": "Sweater",
+        "price": "21",
+        "img": "https://picsum.photos/200"
+    },
+    {
+        "_id": "61067bc3229c40251f4b3ed3",
+        "title": "Hat",
+        "price": "6",
+        "img": "https://picsum.photos/200"
+    },
+    {
+        "_id": "61067bc35f81c1d0c782695a",
+        "title": "Fur Coat",
+        "price": "77",
+        "img": "https://picsum.photos/200"
+    },
+    {
+        "_id": "61067bc3de2170985d2c0fd2",
+        "title": "Gold Neckless",
+        "price": "100",
+        "img": "https://picsum.photos/200"
+    },
+    {
+        "_id": "61067bc311498658527d4831",
+        "title": "Pants",
+        "price": "25",
+        "img": "https://picsum.photos/200"
+    },
+    {
+        "_id": "61067bc3552bf4db08150fd7",
+        "title": "Three Shirts Bundle",
+        "price": "19",
+        "img": "https://picsum.photos/200"
+    },
+    {
+        "_id": "61067bc36b2015674b032ba9",
+        "title": "Cap",
+        "price": "19",
+        "img": "https://picsum.photos/200"
+    },
+    {
+        "_id": "61067bc3d942e869de655aad",
+        "title": "Shoes",
+        "price": "33",
+        "img": "https://picsum.photos/200"
+    },
+    {
+        "_id": "61067bc37d71ea3c430dac5d",
+        "title": "Dress",
+        "price": "71",
+        "img": "https://picsum.photos/200"
+    },
+    {
+        "_id": "61067bc3e72fb19564f5d8b1",
+        "title": "Belt Buckle",
+        "price": "2",
+        "img": "https://picsum.photos/200"
+    },
+    {
+        "_id": "61067bc32cb9a230cd41b2e2",
+        "title": "Belt",
+        "price": "5",
+        "img": "https://picsum.photos/200"
+    },
+    {
+        "_id": "61067bc36c1b8d934b2390a6",
+        "title": "Designer Shirt",
+        "price": "32",
+        "img": "https://picsum.photos/200"
+    },
+    {
+        "_id": "61067bc343fb5e8a9a581d15",
+        "title": "Earings",
+        "price": "5",
+        "img": "https://picsum.photos/200"
+    }
+]
