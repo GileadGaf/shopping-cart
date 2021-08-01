@@ -1,22 +1,24 @@
 <template>
-  <header>
-      <div class="logo">
-         <h1> Shopping</h1>
-      </div>
-       <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/cart">My cart</router-link>
+  <header class="app-header">
+    <nav class="main-nav">
+      <template class="left-header">
+      <router-link to="/"> <img src="../assets/icons/home.png" /></router-link>
+      | <router-link to="/About">ABOUT US</router-link> |
+    </template>
+    <template class="right-header">
+      <router-link to="/Cart">
+      My cart
+      (<span class="num-of-items"></span>)
+      </router-link
+      >
+      </template>
     </nav>
   </header>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style>
-
 </style>
