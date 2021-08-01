@@ -4,6 +4,7 @@ import { cartService } from '../../services/cart-service';
 export default {
     strict: true,
     state: {
+        products: [],
         cartProducts: []
     },
     getters: {
@@ -17,6 +18,11 @@ export default {
             return cartProducts.reduce((acc, product) => {
                 return acc + +product.price;
             }, 0)
+        },
+        getProducts(state) {
+            console.log('from store', state.products);
+            console.log('state', state);
+            return state.products
         }
     },
     mutations: {
@@ -32,6 +38,10 @@ export default {
         },
         clearCart({ cartProducts }) {
             cartProducts = [];
+        },
+        setProducts(state, { products }) {
+            console.log('mutations', products);
+            state.products = products
         }
 
     },
@@ -44,8 +54,13 @@ export default {
         async removeFromCart({ commit }, { productId }) {
             await cartService.removeFromCart(productId);
             commit({ type: 'removeFromCart', productId })
+        },
+
+
+
+        async loadProducts({ commit }) {
+            const products = await productService.getProducts()
+            commit({ type: 'setProducts', products })
         }
-
-
-    }
+    },
 }

@@ -1,18 +1,21 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <h2>Welcome!</h2>
+    <img class="hero" src="../assets/imgs/shopping.jpg" />
+    <template class="first-row">
+      <h1 class="main-title">Our Products</h1>
+      <h3>My Cart (<span></span>items)</h3>
+    </template>
+    <product-list/>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
 
-
+import productList from '@/cmps/product-list'
 export default {
   name: 'home',
   components: {
-
-  }
+productList
+  },
 }
 </script>
